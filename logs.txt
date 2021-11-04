@@ -1,0 +1,2 @@
+Packages to install: 
+- Android SDK Command-line Tools (latest) (cmdline-tools;latest)
