@@ -1,0 +1,33 @@
+# Creating an application that enables multi-hop connectivity on CrossCall android phones.
+# Makes the necessary changes in the device to effortlessly create a MANET (Mobile AdHoc Network).
+# The application sets up the IBSS network, enabling ad-hoc mode on wireless card.
+# Offers the possibility to choose the network name, configure the IP address, net mask and gateway for the device.
+# All parammeters have default values. e.g. the IP address is chosen according to rfc3927 (Dynamic Configuration of IPv4 Link-Local Addresses).
+# The application also allows an easy way to import and run different routing protocols.
+
+# STEPS FOR NETWORK STACK SETUP PROCEDURE:
+1- The application turns off the network interface via the Android
+API, which avoids any other application (third party or even
+the system settings) making changes or overwriting the configurations
+of the networks.
+
+2- then alters the text file that stores all
+known networks to add or remove the IBSS network (the
+wpa_supplicant.conf).
+
+3- It finishes turning on the network interface in order to load the new network,
+and apply to it the network parameters (IP address, network mask, gateway).This
+last step issues commands on the command line.
+
+# MULTI-HOP CONNECTIVITY:
+For multi-hop connectivity, we bundle the application with an OLSR routing daemon.
+Creating a zip file with bash scripts for starting and stopping the routing
+protocol, and the executable binaries with the implementation of the protocol cross-compiled 
+to the architecture of the device.
+Detailed documentation on how to add and use the pre-compiled OLSR build that runs on Android 
+devices as an example in: 
+https://github.com/eSoares/Routing-Protocol-package-to-Android-Ad-hoc-framework
+Using this routing protocol, It was verified that it is possible for
+terminals running other OS’s to join the created MANET. This
+was tested with a laptop running a Linux distribution (Ubuntu)
+with OLSR and two smartphones compatible with AdHocDroid.

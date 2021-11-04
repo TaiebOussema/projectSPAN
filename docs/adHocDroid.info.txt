@@ -1,0 +1,45 @@
+#AdHocDroid: mobile connectivity without infrastructure
+
+Researchers in Portugal have developed an IP-based mesh network that uses rooted Android phones
+to allow connectivity even where there is no provider-based signal.
+
+Mobile AdHoc NETworks (MANETs) that attempt to create device-based webs from which information
+can hop through participating users.
+
+But the new solution, dubbed AdHocDroid, uncommonly amongst similar efforts, supports standard
+TCP/IP applications and generates a genuine IEEE 802.11 MANET, initially using Android-based 
+smartphones which have been rooted.
+
+Similar applications which have exploited WiFi Direct or a commingling of IEEE 802.1 and Bluetooth 
+(such as the Serval Project) need overlay routing and dedicated applications which are able to take
+advantage of the resulting proprietary protocols.
+
+AdHocDroid first systematically disables network connectivity using the Android API, in order to 
+stop individual applications attempting to re-enable or reconfigure network settings on the phone.
+The application then rewrites the text file which stores all known network configuration in order
+to make the MANET the default connectivity path.
+
+The researchers claim that AdHocDroid is the only MANET to date which satisfies the full definition
+of the term:
+	# WiFi Direct cannot perform multi-hop, in addition to requiring a dedicated framework.
+	# Open Garden shares this latter flaw, in addition to requiring a wireless network at one point in the mesh
+	# Serval Project needs dedicated systems.
+
+Measuring throughput on AdHocDroid, the team found contention to be comparable to a standard network
+connection using multi-hop, but doubly speedy on single hop, due to the absence of an intermediate
+node.
+
+Power consumption was broadly equivalent to standard network usage, except in certain configurations
+of the mesh protocol.
+
+#NOTES & TEST
+The researchers used the Gigabyte Gsmart G1305 running Android 2.3 with CyanogenMod 7, and the 
+Samsung Nexus S running Android 4.3 and CyanogenMod 10.2.1. Additionally they enabled AdHocDroid 
+on the Samsung Galaxy Tab 10.1 tablet running Android 3.2.
+
+To test their system the researchers undertook a series of experiments using standard multiplayer 
+game apps from the Android Store, using the Nexus S for these. The game 2048 Battle worked well out
+of the box on the new network, but Spaceteam initially failed to get multi-hop working, since the 
+game by default uses multicast DNS to locate the opponent – traffic which is not forwarded by the 
+router. However after discovery the game worked well, and could even switch comfortably between 
+single-hop and multi-hop.
