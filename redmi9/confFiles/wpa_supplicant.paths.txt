@@ -1,0 +1,12 @@
+# Output command:  <find / -name wpa_supp*>
+ 
+/dev/5MK6Zz/.magisk/mirror/vendor/etc/wifi/wpa_supplicant_overlay.conf
+/dev/5MK6Zz/.magisk/mirror/vendor/etc/wifi/wpa_supplicant.conf
+/dev/5MK6Zz/.magisk/mirror/vendor/bin/hw/wpa_supplicant
+/dev/5MK6Zz/.magisk/mirror/data/misc/wifi/wpa_supplicant
+/dev/5MK6Zz/.magisk/mirror/data/vendor/wifi/wpa/wpa_supplicant.conf
+
+/vendor/etc/wifi/wpa_supplicant_overlay.conf
+/vendor/etc/wifi/wpa_supplicant.conf
+
+/vendor/bin/hw/wpa_supplicant
