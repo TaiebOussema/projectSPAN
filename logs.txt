@@ -1,2 +1,23 @@
 Packages to install: 
 - Android SDK Command-line Tools (latest) (cmdline-tools;latest)
+======================================================================
+======================================================================
+/data/local/tmp/systemrw_1.32 # ./systemrw.sh 
+ --------------------------------------------------
+|    SystemRW v1.32 automated script by lebigmac   |
+|  @xda ©2021 Big thank you to @Kolibass @Brepro1  |
+|@munjeni @AndyYan @gabrielfrias @YOisuPU @bynarie |
+|   without your help this would not be possible!  |
+ --------------------------------------------------
+
+systemrw: Initiating procedure...
+
+systemrw: Device is in custom recovery mode
+systemrw: Current device: Xiaomi Redmi 9
+./systemrw.sh: line 454: can't open 29: no such file
+./systemrw.sh: line 454: 30: not found
+./systemrw.sh: line 454: 30: not found
+./systemrw.sh: line 454: 30: not found
+systemrw: Your Android version is not supported yet. Abort
+
+======================================================================

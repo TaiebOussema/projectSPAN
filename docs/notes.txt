@@ -1,0 +1,29 @@
+The range of Wi-Fi poses a technical challenge for mesh networks. Tests by the Serval project 
+indicate that for two phones to communicate directly over a Wi-Fi mesh, they need to be within 
+100 meters of one another with a clear line of sight, or about a room away if they’re linking 
+through buildings.
+
+Serval is currently testing a device called a mesh extender that can help networks based on its 
+technology reach farther. The device uses Wi-Fi to connect tens of nearby Serval devices to a 
+long-range radio link. If extenders are mounted on the roof, links between several of them 
+should be able to stretch kilometers, says Gardner-Stephen. A crowdfunding campaign to support 
+development of a production version of his prototype will launch soon, and the New Zealand Red 
+Cross is helping test the current design.
+
+Most efforts to develop mesh networking are focused on Google’s Android operating system because 
+Apple’s mobile devices are difficult to modify and relatively expensive. Android powers the 
+majority of smartphones worldwide, dominating in the places where poor infrastructure makes mesh 
+networking especially valuable.
+
+However, some mesh proponents say Google is unnecessarily hampering their efforts because it does 
+not support the device-to-device mode of Wi-Fi chips in its Android software (a complaint registered 
+with Google as “Android bug #82”). That means before a device can become an active part of a mesh 
+network, a user must bypass Android’s security controls, or “root” the device, by installing 
+special software. Unrooted devices can use connectivity provided by a mesh network, but they can’t 
+help expand its coverage.
+
+Both the Commotion and Serval projects have tried to get Google to change the policy, to no avail. 
+Gardner-Stephen says Google may believe that smartphone manufacturers and wireless carriers want 
+it to resist. He adds that the company should consider the contribution it could make to disaster 
+response by allowing—if not explicitly promoting—the creation of mesh networks. “Their policy is 
+inhibiting this kind of humanitarian telecommunication,” he says.
