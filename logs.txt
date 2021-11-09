@@ -21,3 +21,32 @@ systemrw: Current device: Xiaomi Redmi 9
 systemrw: Your Android version is not supported yet. Abort
 
 ======================================================================
+			CrossCall
+======================================================================
+
+# adb shell "getprop ro.product.cpu.abi"
+arm64-v8a (device build architecture)
+
+# adb shell getprop ro.build.ab_update
+true (true means that the device runs A/B system)
+
+# adb shell getprop ro.system.build.version.release
+11 (android release)
+
+# adb shell getprop ro.system.build.version.sdk
+30 (SDK version)
+
+# adb shell "which su"
+/system/xbin/su (location of existing su binary)
+
+# adb shell "ls -laR /system/xbin"
+(what else is at location /system/xbin/su)
+/system/xbin:
+total 20
+drwxr-x--x  2 root shell  4096 2009-01-01 01:00 .
+drwxr-xr-x 17 root root   4096 2009-01-01 01:00 ..
+-rwsr-x---  1 root shell 11640 2009-01-01 01:00 su
+
+# adb shell "cat /proc/mounts | grep -i ' / '"
+/dev/block/dm-4 / ext4 ro,seclabel,relatime,discard 0 0
+--> The root file system is mounted as ro - readonly
