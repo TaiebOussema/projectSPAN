@@ -50,3 +50,133 @@ drwxr-xr-x 17 root root   4096 2009-01-01 01:00 ..
 # adb shell "cat /proc/mounts | grep -i ' / '"
 /dev/block/dm-4 / ext4 ro,seclabel,relatime,discard 0 0
 --> The root file system is mounted as ro - readonly
+
+=======================================================
+lancelot:/ # mount -v | grep "^/" | awk '{print "\nPartition identifier: " $1  "\n Mountpoint: "  $3}' | grep /vendor                       
+ Mountpoint: /vendor
+ Mountpoint: /mnt/vendor/protect_f
+ Mountpoint: /mnt/vendor/protect_s
+ Mountpoint: /mnt/vendor/nvdata
+ Mountpoint: /mnt/vendor/nvcfg
+ Mountpoint: /mnt/vendor/persist
+Partition identifier: /dev/gOeDZ/.magisk/block/vendor
+ Mountpoint: /dev/gOeDZ/.magisk/mirror/vendor
+
+=====================================================
+=====================================================
+system read only issue
+systemrw tool logs
+
+lancelot:/data/local/tmp/systemrw_1.32 # ./systemrw.sh size=15                                     
+ --------------------------------------------------
+|    SystemRW v1.32 automated script by lebigmac   |
+|  @xda ©2021 Big thank you to @Kolibass @Brepro1  |
+|@munjeni @AndyYan @gabrielfrias @YOisuPU @bynarie |
+|   without your help this would not be possible!  |
+ --------------------------------------------------
+
+systemrw: Custom size detected: 15 MB
+systemrw: Initiating procedure...
+
+systemrw: Device is in Android mode. Ignoring
+systemrw: Current device: Xiaomi Redmi 9
+systemrw: Current Android version: 10
+systemrw: Current SELinux status: Permissive
+systemrw: Current slot is: 0
+systemrw: Your super partition is located at: /dev/block/mmcblk0p43
+systemrw: / is read-only
+systemrw: /product is read-only
+systemrw: /vendor is read-only
+systemrw: Adjusting permissions...
+systemrw: Attempting to disable dm-verity and verification...
+verification is already disabled.
+verity is already disabled.
+systemrw: Dumping super partition to: /data/local/tmp/systemrw_1.32/img/super_original.bin
+systemrw: Please wait patiently...
+
+14680064+0 records in
+14680064+0 records out
+7516192768 bytes (7.0 G) copied, 108.826500 s, 66 M/s
+
+systemrw: Successfully dumped super partition to: /data/local/tmp/systemrw_1.32/img/super_original.bin
+systemrw: Unpacking embedded partitions from /data/local/tmp/systemrw_1.32/img/super_original.bin
+systemrw: Nested partitions were successfully extracted from super
+
+systemrw: Current size of product.img in bytes: 1024577536
+systemrw: Current size of product.img in MB: 977
+systemrw: Current size of product.img in 512-byte sectors: 2001128
+
+systemrw: NO 'shared_blocks feature' detected @ product.img
+
+systemrw: Shrinking size of product.img back to minimum size...
+resize2fs 1.45.4 (23-Sep-2019)
+Resizing the filesystem on /data/local/tmp/systemrw_1.32/img/product.img to 245432 (4k) blocks.
+The filesystem on /data/local/tmp/systemrw_1.32/img/product.img is now 245432 (4k) blocks long.
+
+systemrw: Custom size of product.img in bytes: 1021018112
+systemrw: Custom size of product.img in MB: 973
+systemrw: Custom size of product.img in 512-byte sectors: 1994176
+
+systemrw: Increasing filesystem size of product.img...
+resize2fs 1.45.4 (23-Sep-2019)
+Resizing the filesystem on /data/local/tmp/systemrw_1.32/img/product.img to 249272 (4k) blocks.
+The filesystem on /data/local/tmp/systemrw_1.32/img/product.img is now 249272 (4k) blocks long.
+
+=================================================
+
+systemrw: Current size of system.img in bytes: 2548318208
+systemrw: Current size of system.img in MB: 2430
+systemrw: Current size of system.img in 512-byte sectors: 4977184
+
+systemrw: NO 'shared_blocks feature' detected @ system.img
+
+systemrw: Shrinking size of system.img back to minimum size...
+resize2fs 1.45.4 (23-Sep-2019)
+Resizing the filesystem on /data/local/tmp/systemrw_1.32/img/system.img to 610461 (4k) blocks.
+The filesystem on /data/local/tmp/systemrw_1.32/img/system.img is now 610461 (4k) blocks long.
+
+systemrw: Custom size of system.img in bytes: 2516176896
+systemrw: Custom size of system.img in MB: 2399
+systemrw: Custom size of system.img in 512-byte sectors: 4914408
+
+systemrw: Increasing filesystem size of system.img...
+resize2fs 1.45.4 (23-Sep-2019)
+Resizing the filesystem on /data/local/tmp/systemrw_1.32/img/system.img to 614301 (4k) blocks.
+The filesystem on /data/local/tmp/systemrw_1.32/img/system.img is now 614301 (4k) blocks long.
+
+=================================================
+
+systemrw: Current size of vendor.img in bytes: 650797056
+systemrw: Current size of vendor.img in MB: 620
+systemrw: Current size of vendor.img in 512-byte sectors: 1271088
+
+systemrw: NO 'shared_blocks feature' detected @ vendor.img
+
+systemrw: Shrinking size of vendor.img back to minimum size...
+resize2fs 1.45.4 (23-Sep-2019)
+Resizing the filesystem on /data/local/tmp/systemrw_1.32/img/vendor.img to 155833 (4k) blocks.
+The filesystem on /data/local/tmp/systemrw_1.32/img/vendor.img is now 155833 (4k) blocks long.
+
+systemrw: Custom size of vendor.img in bytes: 654020608
+systemrw: Custom size of vendor.img in MB: 623
+systemrw: Custom size of vendor.img in 512-byte sectors: 1277384
+
+systemrw: Increasing filesystem size of vendor.img...
+resize2fs 1.45.4 (23-Sep-2019)
+Resizing the filesystem on /data/local/tmp/systemrw_1.32/img/vendor.img to 159673 (4k) blocks.
+The filesystem on /data/local/tmp/systemrw_1.32/img/vendor.img is now 159673 (4k) blocks long.
+
+=================================================
+
+systemrw: Joining all extracted images back into one single super image...
+systemrw: Please wait and ignore the invalid sparse warnings...
+
+Invalid sparse file format at header magic
+Invalid sparse file format at header magic
+Invalid sparse file format at header magic
+
+systemrw: Successfully created patched super image @
+systemrw: /data/local/tmp/systemrw_1.32/img/super_fixed.bin
+
+systemrw: Congratulations! Your image(s) should now have R/W capability
+systemrw: Please reboot into bootloader and flash the file(s) manually
